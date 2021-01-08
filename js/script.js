@@ -34,12 +34,12 @@
 document.querySelector("button").addEventListener("click", hacerOperacion);
 
 const input1 = document.querySelector("#input1");
-const input2 = document.querySelector("#input1");
+const input2 = document.querySelector("#input2");
 const operacion = document.querySelector("#operacion");
 
 function imprimirResultado(total) {
   const resultado = document.querySelector("#resultado");
-  resultado.innerText = `El resulrado de tu operación es ${total}`;
+  resultado.innerText = `El resultado de tu operación es ${total}`;
 }
 
 function imprimirError(mensaje) {
@@ -50,4 +50,64 @@ function imprimirError(mensaje) {
 // TERMINA EL BOILERPLATE
 
 // COMIENZA ACA
-function hacerOperacion() {}
+
+function sumar() {
+  valor1 = parseInt(input1.value);
+  valor2 = parseInt(input2.value);
+  suma = valor1 + valor2;
+  return imprimirResultado(suma);
+}
+
+function restar() {
+  valor1 = input1.value;
+  valor2 = input2.value;
+  resta = valor1 - valor2;
+  return imprimirResultado(resta);
+}
+
+function multiplicar() {
+  valor1 = input1.value;
+  valor2 = input2.value;
+  multiplicacion = valor1 * valor2;
+  return imprimirResultado(multiplicacion);
+}
+
+function dividir() {
+  valor1 = input1.value;
+  valor2 = input2.value;
+  division = valor1 / valor2;
+  return imprimirResultado(division);
+}
+
+function calcular() {
+  if (operacion.value === 'sumar') {
+    sumar();
+  }
+  else if (operacion.value === 'restar') {
+    restar();
+  }
+
+  else if (operacion.value === 'multiplicar') {
+    multiplicar();
+  }
+
+  else if (operacion.value === 'dividir') {
+    dividir();
+  }
+}
+
+function validacion() {
+  if (input1.value === '') {
+    imprimirError('No ingreso ningún valor numérico en el primer input');
+  } else if (operacion.value === '') {
+    imprimirError('No seleciono una operación a relizar');
+  } else if (input2.value === '') {
+    imprimirError('No ingreso ningún valor numérico en el segundo input');
+  } else {
+    calcular()
+  }
+}
+
+function hacerOperacion() {
+  validacion()
+}
