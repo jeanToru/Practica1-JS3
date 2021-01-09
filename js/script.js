@@ -52,31 +52,31 @@ function imprimirError(mensaje) {
 // COMIENZA ACA
 
 function sumar() {
-  valor1 = parseInt(input1.value);
-  valor2 = parseInt(input2.value);
+  let valor1 = parseInt(input1.value);
+  let valor2 = parseInt(input2.value);
   suma = valor1 + valor2;
-  return imprimirResultado(suma);
+  imprimirResultado(suma);
 }
 
 function restar() {
-  valor1 = input1.value;
-  valor2 = input2.value;
+  let valor1 = input1.value;
+  let valor2 = input2.value;
   resta = valor1 - valor2;
-  return imprimirResultado(resta);
+  imprimirResultado(resta);
 }
 
 function multiplicar() {
-  valor1 = input1.value;
-  valor2 = input2.value;
+  let valor1 = input1.value;
+  let valor2 = input2.value;
   multiplicacion = valor1 * valor2;
-  return imprimirResultado(multiplicacion);
+  imprimirResultado(multiplicacion);
 }
 
 function dividir() {
-  valor1 = input1.value;
-  valor2 = input2.value;
+  let valor1 = input1.value;
+  let valor2 = input2.value;
   division = valor1 / valor2;
-  return imprimirResultado(division);
+  imprimirResultado(division);
 }
 
 function calcular() {
